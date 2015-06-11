@@ -23,6 +23,8 @@ class Instructor < Person
 	end
 end
 
+# Prompts for Student/Instructor
+
 puts "What is the name of your instructor?"
 instructor_name = gets.chomp
 instructor = Instructor.new(instructor_name)
@@ -32,5 +34,15 @@ puts "What is the name of the student?"
 student_name = gets.chomp
 student = Student.new(student_name)
 puts student.message
+
+instructor.teach
+student.teach
+
+# The reason why this does not work is because 
+# the class method of "teach" is only defined within
+# the instructor class method and not within the "Student" class method
+
+
+
 
 
